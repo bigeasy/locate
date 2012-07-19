@@ -4,8 +4,9 @@ Zero dependency routing for the browser and Node.js.
 
 ## Change Log 
 
-Changes per release.
+Changes for each release.
 
-### Version 0.0.1 &mdash; 
+### Version 0.0.1 &mdash; Thu Jul 19 08:14:30 UTC 2012
 
- * Basic router.
+ * Build on Travis CI. #3.
+ * Create basic router. #1.
