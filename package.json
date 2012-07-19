@@ -1,7 +1,7 @@
 { "name": "reactor"
 , "description": "Zero dependency routing for the browser and Node.js."
 , "author": "Alan Gutierrez"
-, "version": "0.0.0"
+, "version": "0.0.2"
 , "keywords": [ "router", "html5", "middleware", "async", "asynchronous" ]
 , "licenses": [
   { "type": "MIT"
