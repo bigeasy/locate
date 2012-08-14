@@ -8,6 +8,7 @@ Changes for each release.
 
 ### Version 0.0.3
 
+ * Add `homepage` to `package.json`. #4.
  * Convert `t/sizes.t` to work on OS X. #6.
  * Case-insensitive request method match. #5.
 

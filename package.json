@@ -3,6 +3,7 @@
 , "author": "Alan Gutierrez"
 , "version": "0.0.2"
 , "keywords": [ "router", "html5", "middleware", "async", "asynchronous" ]
+, "homepage": "https://github.com/bigeasy/reactor"
 , "licenses": [
   { "type": "MIT"
   , "url": "http://github.com/bigeasy/reactor/raw/master/LICENSE"
