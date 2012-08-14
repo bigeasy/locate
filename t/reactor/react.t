@@ -9,5 +9,5 @@ require('proof')(3, function (equal) {
     equal(extra, 1, 'extra');
   });
 
-  reactor.react('get', '/index.html', 1);
+  reactor.react('GET', '/index.html', 1);
 });
