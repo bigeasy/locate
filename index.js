@@ -28,6 +28,7 @@
 
     function react (method, url) {
       var vargs = slice.call(arguments, 2), i, reaction, hit;
+      method = method.toLowerCase();
       for (i = reactions.length -1; i != -1; i--) {
         reaction = reactions[i];
         if (!reaction.methods.length || ~reaction.methods.indexOf(method)) {
