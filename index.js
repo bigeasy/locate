@@ -33,7 +33,7 @@
         reaction = reactions[i];
         if (!reaction.methods.length || ~reaction.methods.indexOf(method)) {
           if (~reaction.urls.indexOf(url)) {
-            reaction.callback.apply(this, [ method, url ].concat(vargs));
+            reaction.callback.apply(this, vargs);
           }
         }
       }
