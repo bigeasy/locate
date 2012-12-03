@@ -6,6 +6,11 @@ Zero dependency routing for the browser and Node.js.
 
 Changes for each release.
 
+### Version 0.0.4
+
+ * Add `.js` suffix to test programs. #9.
+ * Clean up AMD/CommonJS invocation switch. #8.
+
 ### Version 0.0.3
 
 Released: Mon Aug 13 01:55:31 UTC 2012.
