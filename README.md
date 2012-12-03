@@ -8,6 +8,7 @@ Changes for each release.
 
 ### Version 0.0.4
 
+ * Implement parameterized routes. #10.
  * Add `.js` suffix to test programs. #9.
  * Clean up AMD/CommonJS invocation switch. #8.
 

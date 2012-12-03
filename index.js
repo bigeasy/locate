@@ -11,36 +11,79 @@
 
 // Use live or delegate, need to be friendly with a selector langauge.
   var slice = [].slice;
-  function Reactor () {
-    var reactions = [];
-    function on () {
-      var vargs = slice.call(arguments, 0),
-          reaction = { methods: [], urls: [], callback: vargs.pop() }, i;
-      for (i = vargs.length -1; i != -1; i--) {
-        if (vargs[i][0] == '/') {
-          reaction.urls.push(vargs[i]);
-        } else {
-          reaction.methods.push(vargs[i]);
-        }
-      }
-      reactions.push(reaction);
-    }
 
-    function react (method, url) {
-      var vargs = slice.call(arguments, 2), i, reaction, hit;
-      method = method.toLowerCase();
-      for (i = reactions.length -1; i != -1; i--) {
-        reaction = reactions[i];
-        if (!reaction.methods.length || ~reaction.methods.indexOf(method)) {
-          if (~reaction.urls.indexOf(url)) {
-            reaction.callback.apply(this, vargs);
+  var REGEX = new RegExp('(\\' + '/ . * + ? | ( ) [ ] { } \\'.split(' ').join('|\\') + ')', 'g');
+
+  function regular (text) { return text.replace(REGEX, '\\$1') }
+
+  function parse (path) {
+    if (typeof path != "string") return path;
+    var parts = path.split(/\//), i, I, $, match = {}, regex = [];
+    for (i = 0, I = parts.length; i < I; i++) {
+      if ($ = /^:(\w[\w\d]+)$/.exec(parts[i])) {
+        if (!match.params) match.params = [];
+        match.params.push($[1]);
+        regex.push('([^/]+)');
+      } else {
+        regex.push(regular(parts[i]));
+      }
+    }
+    match.regex = new RegExp('^' + regex.join('\\/') + '$');
+    return match;
+  }
+
+
+  function Reactor () {
+    this.on = on; this.get = get; this.post = post; this.react = react;
+
+    var reactions = [];
+
+    function reaction (methods, path, callback) {
+      var match = parse(path);
+      reactions.push(function (method, path, object) {
+        var i, I, j, J, $;
+        for (i = 0, I = methods.length; i < I; i++) {
+          if ((method == method) && ($ = match.regex.exec(path))) {
+            if (match.params) {
+              object.params = {}; 
+              for (j = 0, J = match.params.length; j < J; j++) {
+                object.params[match.params[j]] = $[j + 1]; 
+              }
+            } else {
+              object.params = $.slice(1);
+            }
+            callback.apply(null, slice.call(arguments, 2));
+            return true;
           }
         }
-      }
+      });
     }
 
-    this.on = on;
-    this.react = react;
+    function on () {
+      var vargs = slice.call(arguments, 0), i, I,
+          methods = [], paths = [], callback = vargs.pop();
+      for (i = 0, I = vargs.length; i < I; i++) {
+        if (vargs[i][0] == '/') {
+          paths.push(vargs[i]);
+        } else {
+          methods.push(vargs[i].toLowerCase());
+        }
+      }
+      for (i = 0, I = paths.length; i < I; i++) {
+        reaction(methods, paths[i], callback);
+      }
+    }
+   
+    function get () { on.apply(this, [ 'get' ].concat(slice.call(arguments, 0))) }
+    function post () { on.apply(this, [ 'post' ].concat(arguments)) }
+
+    function react (method, url) {
+      var i, I, match;
+      for (i = 0, I = reactions.length; i < I; i++) {
+        if (reactions[i].apply(null, arguments)) return true;
+      }
+      return false;
+    }
   }
 
   return { createReactor: function () { return new Reactor } };
