@@ -20,10 +20,14 @@
     if (typeof path != "string") return path;
     var parts = path.split(/\//), i, I, $, match = {}, regex = [];
     for (i = 0, I = parts.length; i < I; i++) {
-      if ($ = /^:(\w[\w\d]+)$/.exec(parts[i])) {
+      if ($ = /^(\*\*?)?:(\w[\w\d]+)$/.exec(parts[i])) {
         if (!match.params) match.params = [];
-        match.params.push($[1]);
-        regex.push('([^/]+)');
+        match.params.push($[2]);
+        if ($[1] == "**") {
+          regex.push('(.+)');
+        } else {
+          regex.push('([^/]+)');
+        }
       } else {
         regex.push(regular(parts[i]));
       }
@@ -40,19 +44,18 @@
 
     function reaction (methods, path, callback) {
       var match = parse(path);
-      reactions.push(function (method, path, object) {
-        var i, I, j, J, $;
+      reactions.push(function (method, path) {
+        var i, I, j, J, $, params = {};
         for (i = 0, I = methods.length; i < I; i++) {
           if ((method == method) && ($ = match.regex.exec(path))) {
             if (match.params) {
-              object.params = {}; 
               for (j = 0, J = match.params.length; j < J; j++) {
-                object.params[match.params[j]] = $[j + 1]; 
+                params[match.params[j]] = $[j + 1]; 
               }
             } else {
-              object.params = $.slice(1);
+              params = $.slice(1);
             }
-            callback.apply(null, slice.call(arguments, 2));
+            callback.apply(null, [ params ].concat(slice.call(arguments, 2)));
             return true;
           }
         }
