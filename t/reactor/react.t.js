@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-require('proof')(1, function (equal) {
+require('proof')(2, function (equal, deepEqual) {
   var reactor = require('../..').createReactor();
 
-  reactor.on('get', '/index.html', function (extra) {
+  reactor.on('get', '/index.html', function (params, extra) {
+    deepEqual(params, {}, 'params');
     equal(extra, 1, 'extra');
   });
 
