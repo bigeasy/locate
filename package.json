@@ -1,8 +1,9 @@
 { "name": "reactor"
 , "description": "Zero dependency routing for the browser and Node.js."
 , "author": "Alan Gutierrez"
-, "version": "0.0.2"
+, "version": "0.0.4"
 , "keywords": [ "router", "html5", "middleware", "async", "asynchronous" ]
+, "homepage": "https://github.com/bigeasy/reactor"
 , "licenses": [
   { "type": "MIT"
   , "url": "http://github.com/bigeasy/reactor/raw/master/LICENSE"
@@ -11,7 +12,7 @@
   { "type": "git"
   , "url": "http://github.com/bigeasy/reactor.git"
   }
-, "scripts" : { "test": "proof platform win32 && proof t/*/*.t || t/test" }
+, "scripts" : { "test": "proof platform win32 && proof t/*/*.t.js || t/test" }
 , "devDependencies":
   { "proof": "0.0.15"
   , "uglify-js": "~1.3"
