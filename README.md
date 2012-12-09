@@ -51,13 +51,17 @@ Changes for each release.
 
 ### Version 0.0.4
 
+Sun Dec  9 17:56:25 UTC 2012
+
+ * Pass parameters to callback as first argument. #12.
+ * Match sub-paths. #11.
  * Implement parameterized routes. #10.
  * Add `.js` suffix to test programs. #9.
  * Clean up AMD/CommonJS invocation switch. #8.
 
 ### Version 0.0.3
 
-Released: Mon Aug 13 01:55:31 UTC 2012.
+Mon Aug 13 01:55:31 UTC 2012
 
  * Remove echo of method and url. #7.
  * Add `homepage` to `package.json`. #4.
@@ -66,7 +70,7 @@ Released: Mon Aug 13 01:55:31 UTC 2012.
 
 ### Version 0.0.2
 
-Released: Thu Jul 19 08:14:30 UTC 2012.
+Thu Jul 19 08:14:30 UTC 2012
 
  * Build on Travis CI. #3.
  * Create basic router. #1.
