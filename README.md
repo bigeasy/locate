@@ -45,9 +45,18 @@ reactor.react("GET", "/files/cats/lol.jpg", req, res);
 
 The above script will print `{ pathInfo: "cats/lol.jpg" }` to the console.
 
-## Change Log 
+## Change Log
 
 Changes for each release.
+
+### Version 0.0.5
+
+ * Parameterize the `find.js` file suffix. #15.
+ * Rename `routify.js` to `find.js`.
+ * Move `routify.js` over from the Regsiter project. #14.
+ * Add a contribution guide and a license.
+ * POSIX shell compatible test helpers.
+ * Upgrade Proof to 0.0.27.
 
 ### Version 0.0.4
 
