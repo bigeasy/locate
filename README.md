@@ -51,6 +51,8 @@ Changes for each release.
 
 ### Version 0.0.5
 
+Thu Mar 21 23:41:09 UTC 2013
+
  * Parameterize the `find.js` file suffix. #15.
  * Rename `routify.js` to `find.js`.
  * Move `routify.js` over from the Regsiter project. #14.
