@@ -39,4 +39,4 @@ function routes (base) {
 }
 
 if (require.main === module) console.log(routes('stencils'));
-else exports.routes = routes;
+else module.exports = routes;
