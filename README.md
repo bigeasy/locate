@@ -1,4 +1,4 @@
-# Reactor [![Build Status](https://secure.travis-ci.org/bigeasy/reactor.png?branch=master)](http://travis-ci.org/bigeasy/reactor)
+# Reactor [![Build Status](https://secure.travis-ci.org/bigeasy/reactor.png?branch=master)](http://travis-ci.org/bigeasy/reactor) [![Coverage Status](https://coveralls.io/repos/bigeasy/reactor/badge.png?branch=master)](https://coveralls.io/r/bigeasy/reactor) [![NPM version](https://badge.fury.io/js/reactor.png)](http://badge.fury.io/js/reactor)
 
 Zero dependency routing for the browser and Node.js.
 
