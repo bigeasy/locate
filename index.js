@@ -50,7 +50,7 @@
           if ((method == method) && ($ = match.regex.exec(path))) {
             if (match.params) {
               for (j = 0, J = match.params.length; j < J; j++) {
-                params[match.params[j]] = $[j + 1]; 
+                params[match.params[j]] = $[j + 1];
               }
             } else {
               params = $.slice(1);
@@ -76,7 +76,7 @@
         reaction(methods, paths[i], callback);
       }
     }
-   
+
     function get () { on.apply(this, [ 'get' ].concat(slice.call(arguments, 0))) }
     function post () { on.apply(this, [ 'post' ].concat(arguments)) }
 
