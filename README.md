@@ -6,7 +6,7 @@ Zero dependency routing for the browser and Node.js.
 
 When you declare a route, you provide a callback function that the reactor will
 invoke if the route matches. Route callbacks always receive parameters extracted
-from the path as their first argument. 
+from the path as their first argument.
 
 ## Route Patterns
 
