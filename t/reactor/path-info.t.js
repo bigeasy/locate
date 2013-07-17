@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
-require('proof')(4, function (ok, deepEqual) {
-  var reactor = require('../..').createReactor();
-  reactor.get('/first', function (params) {
-    deepEqual(params, {}, "no path info");
-  });
-  reactor.get('/first/**:pathInfo', function (params) {
-    deepEqual(params, { pathInfo: "path/info" }, "path info");
-  });
-  ok(reactor.react('GET', '/first', {}), 'matched no path info');
-  ok(reactor.react('GET', '/first/path/info', {}), 'matched with path info');
-});
+require('proof')(2, function (ok, deepEqual) {
+    var reactor = require('../..')([
+        { route: '/first', script: 'first.js' },
+        { route: '/first/**:pathInfo', script: 'first_.js' }
+    ])
+    deepEqual(reactor('/first'), [
+        { script: 'first.js', params: {} }
+    ], 'matched no path info')
+    deepEqual(reactor('/first/path/info'), [
+        { script: 'first_.js', params: { pathInfo: 'path/info' } }
+    ], 'matched width path info')
+})
