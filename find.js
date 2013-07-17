@@ -20,7 +20,7 @@ function routes (base, suffix) {
               name = $[1], pathInfo = !! $[2], extension = $[3],
               route = parts.slice(0);
           if (name != "index") route.push(name);
-          // Note that we do not use the file systems path separator when
+          // Note that we do not use the file system's path separator when
           // resolving stencils.
           routes.push({
             route: "/" + route.join("/"),
