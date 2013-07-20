@@ -1,7 +1,7 @@
 { "name": "reactor"
-, "description": "Zero dependency routing for the browser and Node.js."
+, "description": "Minimalist routing engine for use in browser and on server."
 , "author": "Alan Gutierrez"
-, "version": "0.0.5"
+, "version": "0.0.6"
 , "keywords": [ "router", "html5", "middleware", "async", "asynchronous" ]
 , "homepage": "https://github.com/bigeasy/reactor"
 , "licenses": [

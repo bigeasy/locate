@@ -49,6 +49,15 @@ The above script will print `{ pathInfo: "cats/lol.jpg" }` to the console.
 
 Changes for each release.
 
+### Version 0.0.6
+
+Sat Jul 20 01:42:36 UTC 2013
+
+ * Remove callbacks. Just a list of matches. #21.
+ * Update source code style.
+ * Upgrade to Proof 0.0.32.
+ * Coverage with Istanbul and Coveralls. #18.
+
 ### Version 0.0.5
 
 Thu Mar 21 23:41:09 UTC 2013
