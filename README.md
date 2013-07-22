@@ -49,6 +49,11 @@ The above script will print `{ pathInfo: "cats/lol.jpg" }` to the console.
 
 Changes for each release.
 
+### Version 0.0.7
+
+ * Fix bad match when file is smaller than suffix. #23.
+ * Return definition in match. #24.
+
 ### Version 0.0.6
 
 Sat Jul 20 01:42:36 UTC 2013
