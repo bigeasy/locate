@@ -6,9 +6,23 @@ require('proof')(2, function (equal, deepEqual) {
         { route: '/one/two', script: 'one/two.js' }
     ])
     deepEqual(reactor('/one'), [
-        { script: 'one/index.js', params: {} }
+        {
+            route:
+            {
+                route: '/one',
+                script: 'one/index.js'
+            },
+            params: {}
+        }
     ], 'matched path with one part')
     deepEqual(reactor('/one/two'), [
-        { script: 'one/two.js', params: {} }
+        {
+            route:
+            {
+                route: '/one/two',
+                script: 'one/two.js'
+            },
+            params: {}
+        }
     ], 'matched path with two parts')
 })

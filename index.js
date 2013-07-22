@@ -6,9 +6,9 @@
 
     var REGEX = new RegExp('(\\' + '/ . * + ? | ( ) [ ] { } \\'.split(' ').join('|\\') + ')', 'g')
 
-    return function (paths) {
-        var patterns = paths.map(function (path) {
-            var parts = path.route.split(/\//)
+    return function (routes) {
+        var patterns = routes.map(function (route) {
+            var parts = route.route.split(/\//)
             var params = []
             var regex = []
             var $
@@ -26,10 +26,11 @@
                 }
             })
 
+            
             return {
                 regex: new RegExp('^' + regex.join('\\/') + '$'),
                 params: params,
-                script: path.script
+                route: route
             }
         })
 
@@ -37,15 +38,18 @@
             var methods = []
             var paths = []
             var found = []
-            var $
+            var params, copy, $
 
             patterns.forEach(function (pattern, index) {
                 if ($ = pattern.regex.exec(path)) {
-                    var params = {}
+                    params = {}
                     pattern.params.forEach(function (param, index) {
                         params[param] = $[index + 1]
                     })
-                    found.push({ script: pattern.script, params: params })
+                    found.push({
+                        params: params,
+                        route: pattern.route
+                    })
                 }
             })
 
