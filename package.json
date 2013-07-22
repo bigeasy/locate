@@ -1,7 +1,7 @@
 { "name": "reactor"
 , "description": "Minimalist routing engine for use in browser and on server."
 , "author": "Alan Gutierrez"
-, "version": "0.0.6"
+, "version": "0.0.7"
 , "keywords": [ "router", "html5", "middleware", "async", "asynchronous" ]
 , "homepage": "https://github.com/bigeasy/reactor"
 , "licenses": [
