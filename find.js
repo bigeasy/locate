@@ -20,7 +20,7 @@ function routes (base, suffix) {
         files.forEach(function (entry) {
             var file = path.join(dir, entry)
             var suffixed
-            if (entry.lastIndexOf(dotted) == entry.length - dotted.length) {
+            if (entry.lastIndexOf(dotted) == entry.length - dotted.length && entry.lastIndexOf(dotted) > 0) {
                 if (entry[0] != '_') {
                     var $ = /^(.*?)(_?)\.(.*)$/.exec(entry)
                     var name = $[1]
