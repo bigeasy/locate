@@ -51,6 +51,8 @@ Changes for each release.
 
 ### Version 0.0.7
 
+Mon Jul 22 04:18:54 UTC 2013
+
  * Fix bad match when file is smaller than suffix. #23.
  * Return definition in match. #24.
 
