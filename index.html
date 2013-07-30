@@ -1,50 +1,18 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
-<title>Reactor</title>
+<title>Locate</title>
 <link href="http://fonts.googleapis.com/css?family=ABeeZee|Inconsolata|Karla:400,700|Oxygen+Mono" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy">
 <link rel="stylesheet" type="text/css" href="css/syntax.css">
-<link rel="stylesheet" type="text/css" href="css/reactor.css">
-<body><a href="https://github.com/bigeasy/reactor/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a><div class="container">
+<link rel="stylesheet" type="text/css" href="css/locate.css">
+<body><a href="https://github.com/bigeasy/locate/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a><div class="container">
 
 <div class="unit welcome">
-<h1>Reactor</h1>
+<h1>Locate</h1>
 </div>
 
-<div class="unit description markdown"><p>Zero dependency routing for the browser and Node.js.</p>
-<h2>Route Callbacks</h2>
-<p>When you declare a route, you provide a callback function that the reactor will
-invoke if the route matches. Route callbacks always receive parameters extracted
-from the path as their first argument.</p>
-<h2>Route Patterns</h2>
-<p>Simple parameterized routes provide a parameter object as a first argument.</p>
-<pre><code class="lang-javascript"><div class="highlight"><pre><span class="nx">reactor</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/photos/:user&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">params</span><span class="p">));</span>
-<span class="p">});</span>
-<span class="nx">reactor</span><span class="p">.</span><span class="nx">react</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;/photos/alan&quot;</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span>
-</pre></div>
-</code></pre>
-<p>The above script will print <code>{ user: &quot;alan&quot; }</code> on the console.</p>
-<p>Static routes still provide a parameter object for consistency, but it is always
-empty.</p>
-<pre><code class="lang-javascript"><div class="highlight"><pre><span class="nx">reactor</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/hello&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">params</span><span class="p">));</span>
-<span class="p">});</span>
-<span class="nx">reactor</span><span class="p">.</span><span class="nx">react</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;/hello&quot;</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span>
-</pre></div>
-</code></pre>
-<p>The above script will print <code>{}</code> to the console.</p>
-<p>Parameterized routes can match one or more parts in a path. To match multiple
-parts use a double star before the parameter name.</p>
-<pre><code class="lang-javascript"><div class="highlight"><pre><span class="nx">reactor</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/files/**:pathInfo&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">params</span><span class="p">));</span>
-<span class="p">});</span>
-<span class="nx">reactor</span><span class="p">.</span><span class="nx">react</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;/files/cats/lol.jpg&quot;</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span>
-</pre></div>
-</code></pre>
-<p>The above script will print <code>{ pathInfo: &quot;cats/lol.jpg&quot; }</code> to the console.</p>
-<h2>Change Log</h2>
+<div class="unit description markdown"><h2>Change Log</h2>
 <p>Changes for each release.</p>
 <h3>Version 0.0.7</h3>
 <p>Mon Jul 22 04:18:54 UTC 2013</p>

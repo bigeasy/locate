@@ -1,4 +1,4 @@
-sources = css/reactor.css index.html
+sources = css/locate.css index.html
 
 all: $(sources)
 

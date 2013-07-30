@@ -1,63 +1,18 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
-<title>Reactor</title>
+<title>Locate</title>
 <link href="http://fonts.googleapis.com/css?family=ABeeZee|Inconsolata|Karla:400,700|Oxygen+Mono" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy">
 <link rel="stylesheet" type="text/css" href="css/syntax.css">
-<link rel="stylesheet" type="text/css" href="css/reactor.css">
-<body><a href="https://github.com/bigeasy/reactor/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a><div class="container">
+<link rel="stylesheet" type="text/css" href="css/locate.css">
+<body><a href="https://github.com/bigeasy/locate/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a><div class="container">
 
 <div class="unit welcome">
-<h1>Reactor</h1>
+<h1>Locate</h1>
 </div>
 
 <div class="unit description markdown">
-Zero dependency routing for the browser and Node.js.
-
-## Route Callbacks
-
-When you declare a route, you provide a callback function that the reactor will
-invoke if the route matches. Route callbacks always receive parameters extracted
-from the path as their first argument.
-
-## Route Patterns
-
-Simple parameterized routes provide a parameter object as a first argument.
-
-```javascript
-reactor.get("/photos/:user", function (params, req, res) {
-  console.log(JSON.stringify(params));
-});
-reactor.react("GET", "/photos/alan", req, res);
-```
-
-The above script will print `{ user: "alan" }` on the console.
-
-Static routes still provide a parameter object for consistency, but it is always
-empty.
-
-```javascript
-reactor.get("/hello", function (params, req, res) {
-  console.log(JSON.stringify(params));
-});
-reactor.react("GET", "/hello", req, res);
-```
-
-The above script will print `{}` to the console.
-
-Parameterized routes can match one or more parts in a path. To match multiple
-parts use a double star before the parameter name.
-
-```javascript
-reactor.get("/files/**:pathInfo", function (params, req, res) {
-  console.log(JSON.stringify(params));
-});
-reactor.react("GET", "/files/cats/lol.jpg", req, res);
-```
-
-The above script will print `{ pathInfo: "cats/lol.jpg" }` to the console.
-
 ## Change Log
 
 Changes for each release.
