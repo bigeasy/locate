@@ -1,16 +1,16 @@
-{ "name": "reactor"
-, "description": "Minimalist routing engine for use in browser and on server."
+{ "name": "locate"
+, "description": "A URL to object map for minimalist routing."
 , "author": "Alan Gutierrez"
-, "version": "0.0.7"
-, "keywords": [ "router", "html5", "middleware", "async", "asynchronous" ]
-, "homepage": "https://github.com/bigeasy/reactor"
+, "version": "0.0.8"
+, "keywords": [ "router", "html5", "middleware", "map" ]
+, "homepage": "https://github.com/bigeasy/locate"
 , "licenses": [
   { "type": "MIT"
-  , "url": "http://github.com/bigeasy/reactor/raw/master/LICENSE"
+  , "url": "http://github.com/bigeasy/locate/raw/master/LICENSE"
   }]
 , "repository":
   { "type": "git"
-  , "url": "http://github.com/bigeasy/reactor.git"
+  , "url": "http://github.com/bigeasy/locate.git"
   }
 , "scripts" : { "test": "proof platform win32 && proof test t/*/*.t.js || t/test" }
 , "devDependencies":

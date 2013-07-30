@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 require('proof')(2, function (deepEqual) {
-    var reactor = require('../..')([
+    var locate = require('../..')([
         { route: '/post/*:name/*:id', script: 'post/$name/$id/index.js' },
         { route: '/user/*:name', script: 'user/$name/index.js' }
     ])
 
-    deepEqual(reactor('/user/alan'), [
+    deepEqual(locate('/user/alan'), [
         {
             route:
             {
@@ -19,7 +19,7 @@ require('proof')(2, function (deepEqual) {
             }
         }
     ], 'matched one parameter')
-    deepEqual(reactor('/post/alan/1'), [
+    deepEqual(locate('/post/alan/1'), [
         {
             route:
             {

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 require('proof')(2, function (ok, deepEqual) {
-    var reactor = require('../..')([
+    var locate = require('../..')([
         { route: '/first', script: 'first.js' },
         { route: '/first/**:pathInfo', script: 'first_.js' }
     ])
-    deepEqual(reactor('/first'), [
+    deepEqual(locate('/first'), [
         {
             route:
             {
@@ -15,7 +15,7 @@ require('proof')(2, function (ok, deepEqual) {
             params: {}
         }
     ], 'matched no path info')
-    deepEqual(reactor('/first/path/info'), [
+    deepEqual(locate('/first/path/info'), [
         {
             route:
             {

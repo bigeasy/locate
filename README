@@ -1,15 +1,15 @@
-Reactor
+Locate
 
-Static page generations that remixes concerns.
+A URL to object map.
 
-    Documentation:  http://bigeasy.github.io/reactor
-    Source:         http://github.io/bigeasy/reactor
-    Issues:         http://github.com/bigeasy/reactor/issues
+    Documentation:  http://bigeasy.github.io/locate
+    Source:         http://github.io/bigeasy/locate
+    Issues:         http://github.com/bigeasy/locate/issues
 
-    Install:        `npm install reactor`
+    Install:        `npm install locate`
 
     License:        MIT
 
-To learn everything you want to know about Reactor start here:
+To learn everything you want to know about Locate start here:
 
-    http://bigeasy.github.io/reactor
+    http://bigeasy.github.io/locate
