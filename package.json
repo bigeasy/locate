@@ -2,7 +2,7 @@
     "name":               "locate",
     "description":        "A URL to object map for minimalist routing.",
     "author":             "Alan Gutierrez",
-    "version":            "0.0.0",
+    "version":            "0.0.8",
     "keywords":
     [
                           "router", "html5", "middleware", "map"
