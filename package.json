@@ -8,6 +8,7 @@
                           "router", "html5", "middleware", "map"
     ],
     "homepage":           "https://github.com/bigeasy/locate",
+    "bugs":               "https://github.com/bigeasy/locate/issues",
     "licenses":
     [{
                           "type": "MIT",
